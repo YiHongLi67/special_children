@@ -1,0 +1,18 @@
+<view class="tit">{{title}}</view>
+<view>
+  <block wx:if="{{datas.length}}">
+    <view class="item" wx:for="{{datas}}" wx:key="course_id">
+      <image src="{{item.cover_url}}" mode="aspectFill" />
+      <view>
+        <text>{{item.summary}}:</text>
+        {{item.course_des}}
+      </view>
+      <button class="{{item.isClick ? 'isClick' : ''}}" bind:tap="addCourse" data-isclick="{{item.isClick}}" data-id="{{item.course_id}}">
+        {{item.isClick ? "已加入": "加入成长计划"}}
+      </button>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="notice">暂无推荐</view>
+  </block>
+</view>

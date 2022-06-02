@@ -1,0 +1,104 @@
+.child {
+  padding: 30rpx;
+}
+.msg {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200rpx;
+}
+.msg > view {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.msg > view > text {
+  line-height: 100rpx;
+}
+.msg > view > text:nth-of-type(1) {
+  width: 200rpx;
+  text-align: center;
+  color: #666;
+}
+.msg > view > text:nth-of-type(2) {
+  width: 300rpx;
+  color: #444;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 200rpx;
+}
+.btn > view {
+  display: inline-block;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  background: #8faadc;
+  color: #444;
+  -webkit-border-radius: 10rpx;
+}
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+.drawer_box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 650rpx;
+  height: 600rpx;
+  z-index: 5;
+  background: #fafafa;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.drawer_title,
+.btn_ok {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 40rpx "microsoft yahei";
+}
+.btn_ok {
+  border-top: 2rpx solid #e8e8ea;
+  color: #3cc51f;
+}
+.drawer_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+.drawer_content > view {
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+.drawer_content view label {
+  text-align: center;
+  width: 130rpx;
+  color: #666;
+}
+.drawer_content view input {
+  flex: 1;
+  line-height: 70rpx;
+  height: 70rpx;
+  outline: 2rpx solid rgb(226, 221, 221);
+  color: #444;
+}

@@ -1,0 +1,70 @@
+/* 搜索 */
+.index_page {
+  padding: 30rpx;
+}
+.search {
+  display: flex;
+  border: 2rpx solid #93a2f5;
+  border-radius: 16rpx;
+  margin-bottom: 10rpx;
+}
+.search icon {
+  width: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.search input {
+  flex: 1;
+  height: 80rpx;
+}
+.icon-shanchu {
+  font-size: 44rpx;
+}
+/* 导航 */
+.nav {
+  padding: 0 20rpx;
+  margin-bottom: 16rpx;
+}
+.nav scroll-view {
+  display: flex;
+  white-space: nowrap;
+}
+.nav scroll-view view {
+  margin-right: 30rpx;
+  line-height: 60rpx;
+}
+.active {
+  border-bottom: 6rpx solid #ff4a37;
+}
+/* 轮播 */
+.head swiper-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+swiper {
+  margin: 10rpx;
+  height: 300rpx;
+}
+.tit {
+  line-height: 70rpx;
+}
+.nodata {
+  line-height: 70rpx;
+  text-align: center;
+}
+swiper-item text {
+  position: absolute;
+  width: 100%;
+  line-height: 300rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #e2e4ee;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.tip {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 16rpx 0;
+  font-size: 32rpx;
+}

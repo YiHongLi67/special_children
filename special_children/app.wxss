@@ -1,0 +1,8 @@
+@import "/static/font/iconfont.wxss";
+/**app.wxss**/
+.container {
+  color: #889cff;
+  color: #13227a;
+  color: #6077fa;
+  color: black;
+}

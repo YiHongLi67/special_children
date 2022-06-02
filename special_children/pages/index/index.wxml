@@ -1,0 +1,109 @@
+<view class="index_page">
+	<view class="search">
+		<icon class="iconfont icon-sousuo" />
+		<input
+		 type="text"
+		 class="search-input"
+		 placeholder="输入课程关键字或老师昵称"
+		 value="{{inputVal}}"
+		 bindinput="input"
+		/>
+		<block wx:if="{{inputVal}}">
+			<icon class="iconfont icon-shanchu" bind:tap="clearInput" />
+		</block>
+		<block wx:else></block>
+	</view>
+	<block wx:if="{{!inputVal}}">
+		<view class="nav">
+			<scroll-view
+			 scroll-x
+			 scroll-y="false"
+			 enable-flex
+			 scroll-into-view="{{'id'+activeId}}"
+			 scroll-with-animation
+			>
+				<view
+				 wx:for="{{navList}}"
+				 wx:key="id"
+				 class="{{item.id === activeId ? 'active': ''}}"
+				 data-id="{{item.id}}"
+				 bind:tap="switchTab"
+				>
+					{{item.name}}
+				</view>
+			</scroll-view>
+		</view>
+	</block>
+	<block wx:else></block>
+	<block wx:if="{{inputVal}}">
+		<view class="tip">搜索结果</view>
+	</block>
+	<block wx:else></block>
+	<view class="tit">护理知识</view>
+	<block wx:if="{{nurse.length}}">
+		<swiper
+		 class="head"
+		 indicator-dots
+		 autoplay
+		 interval="2000"
+		 duration="500"
+		 indicator-color="#fff"
+		 indicator-active-color="#FF4A37"
+		>
+			<block wx:for="{{nurse}}" wx:key="id">
+				<swiper-item>
+					<image src="{{item.cover_url}}" mode="aspectFill" />
+					<text>{{item.summary}}</text>
+				</swiper-item>
+			</block>
+		</swiper>
+	</block>
+	<block wx:else>
+		<view class="nodata">无数据</view>
+	</block>
+	<view class="tit">康复计划</view>
+	<block wx:if="{{plan.length}}">
+		<swiper
+		 class="head"
+		 indicator-dots
+		 autoplay
+		 interval="2000"
+		 duration="500"
+		 indicator-color="#fff"
+		 indicator-active-color="#FF4A37"
+		>
+			<block wx:for="{{plan}}" wx:key="id">
+				<swiper-item>
+					<image src="{{item.cover_url}}" mode="aspectFill" />
+					<text>{{item.summary}}</text>
+				</swiper-item>
+			</block>
+		</swiper>
+	</block>
+	<block wx:else>
+		<view class="nodata">无数据</view>
+	</block>
+	<view class="tit">公共活动</view>
+	<block wx:if="{{active.length}}">
+		<swiper
+		 class="head"
+		 indicator-dots
+		 autoplay
+		 interval="2000"
+		 duration="500"
+		 indicator-color="#fff"
+		 indicator-active-color="#FF4A37"
+		>
+			<block wx:for="{{active}}" wx:key="id">
+				<swiper-item>
+					<image src="{{item.cover_url}}" mode="aspectFill" />
+					<text>{{item.summary}}</text>
+				</swiper-item>
+			</block>
+		</swiper>
+	</block>
+	<block wx:else>
+		<view class="nodata">无数据</view>
+	</block>
+</view>
+

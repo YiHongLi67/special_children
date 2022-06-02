@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/growth/growth",
+    "pages/personal/personal",
+    "pages/child/child",
+    "pages/login/login",
+    "pages/manage/manage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6077fa",
+    "navigationBarTitleText": "特殊儿童康训管理",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#13227A",
+    "backgroundColor": "#00000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home_a.png"
+      },
+      {
+        "pagePath": "pages/growth/growth",
+        "text": "成长计划",
+        "iconPath": "static/icon/growth.png",
+        "selectedIconPath": "static/icon/growth_a.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "static/icon/personal.png",
+        "selectedIconPath": "static/icon/personal_a.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,88 @@
+/* 背景图 */
+.bg_img {
+  width: 100%;
+  height: 740rpx;
+  background-color: #6077fa;
+}
+.bg_img image {
+  width: 100%;
+  height: 740rpx;
+}
+.container_wrap {
+  top: 150rpx;
+  position: absolute;
+  width: 100%;
+}
+.container {
+  padding: 0 20rpx;
+  background-color: #fff;
+  background-clip: content-box;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+.container > view:nth-of-type(2) {
+  height: calc(100vh - 380rpx);
+}
+/* 用户信息 */
+.user_msg {
+  display: flex;
+  align-items: center;
+}
+.user_msg image {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+  border: 2rpx solid #13227a;
+}
+.user_msg button {
+  width: auto;
+  display: inline;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 20rpx 40rpx;
+  background-color: #13227a;
+  color: white;
+  border-radius: 40rpx;
+  margin: 0;
+  font-size: 32rpx;
+}
+/* 菜单 */
+.menu icon:nth-of-type(1) {
+  font-size: 60rpx;
+}
+.menu icon {
+  margin: 0 30rpx;
+}
+.menu {
+  font-size: 40rpx;
+  display: flex;
+  margin: 20rpx 0;
+  align-items: center;
+}
+.menu text {
+  flex: 1;
+  line-height: 85rpx;
+}
+.tag {
+  color: #666;
+}
+.menu .icon-shouye,
+.menu .icon-kecheng-,
+.menu .icon-ruzhiguanli,
+.menu .icon-zhichu {
+  color: rgb(255, 192, 75);
+}
+.menu .icon-31dingdan,
+.menu .icon-kaoqin,
+.menu .icon-shouru {
+  color: rgb(255, 111, 44);
+}
+/* 人事 */
+.menu .icon-lizhishenqing {
+  color: #858486;
+}
+/* 联系我们 */
+.menu .icon-lianxiwomen {
+  color: blueviolet;
+}

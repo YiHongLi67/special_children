@@ -1,0 +1,84 @@
+<view>
+	<view class="bg_img">
+		<image src="/static/images/per_back.png" />
+	</view>
+	<view
+	 class="container_wrap"
+	 style="transform: {{translateY}}; transition: {{transition}}"
+	 bind:touchstart="dragTouchStart"
+	 bind:touchmove="dragTouchMove"
+	 bind:touchend="dragTouchEnd"
+	>
+		<view class="container">
+			<view class="user_msg">
+				<image src="{{userInfo.avatarUrl || '/static/images/avatar.png'}}" bind:tap="login" />
+				<button wx:if="{{!userInfo.nickName}}" bind:tap="getUserInfo">授权头像昵称</button>
+				<block wx:else>
+					<text>{{userInfo.nickName}}</text>
+					<text class="tag">{{roles[userInfo.role] ? "（" + roles[userInfo.role] + "）" : ""}}</text>
+				</block>
+			</view>
+			<view>
+				<block wx:if="{{userInfo.role === 0}}">
+					<view class="menu">
+						<icon class="iconfont icon-shouye" />
+						<text bind:tap="child">我的孩子</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+					<view class="menu">
+						<icon class="iconfont icon-31dingdan" />
+						<text>我的订单</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+				</block>
+				<block wx:if="{{userInfo.role === 1}}">
+					<view class="menu">
+						<icon class="iconfont icon-kecheng-" />
+						<text>我的课表</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+					<view class="menu">
+						<icon class="iconfont icon-kaoqin" />
+						<text>我的考勤</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+				</block>
+				<block wx:if="{{userInfo.role === 2}}">
+					<view class="menu">
+						<icon class="iconfont icon-ruzhiguanli" />
+						<text>入职管理</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+					<view class="menu">
+						<icon class="iconfont icon-lizhishenqing" />
+						<text>离职管理</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+					<view class="menu">
+						<icon class="iconfont icon-kaoqin" />
+						<text>考勤管理</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+				</block>
+				<block wx:if="{{userInfo.role === 3}}">
+					<view class="menu">
+						<icon class="iconfont icon-shouru" />
+						<text>收入管理</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+					<view class="menu">
+						<icon class="iconfont icon-zhichu" />
+						<text>支出管理</text>
+						<icon class="iconfont icon-gengduo" />
+					</view>
+				</block>
+				<view class="menu">
+					<icon class="iconfont icon-lianxiwomen" />
+					<text>联系我们</text>
+					<icon class="iconfont icon-gengduo" />
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "GrowPlan": "/components/GrowPlan/GrowPlan",
+    "MorePlan": "/components/MorePlan/MorePlan"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,68 @@
+<view class="container" bind:tap="hideSelect">
+	<view class="wrapper">
+		<view class="left-top-sign">LOGIN</view>
+		<view class="welcome">欢迎回来！</view>
+		<view class="input-content">
+			<view class="input-item">
+				<text class="tit">手机号码</text>
+				<input
+				 type="text"
+				 placeholder="请输入手机号码"
+				 data-type="phone"
+				 bind:input="getForm"
+				/>
+			</view>
+			<view class="input-item" wx:if="{{isRegister}}">
+				<text class="tit">角色</text>
+				<!-- 下拉框 -->
+				<view class='top-selected' catch:tap='bindShowMsg'>
+					<text>{{role}}</text>
+					<icon class="iconfont icon-gengduo" />
+				</view>
+				<!-- 下拉需要显示的列表 -->
+				<view class="select_box" hidden="{{!select}}">
+					<view wx:for="{{roles}}" wx:key="index">
+						<view
+						 class="select_one {{curIdx === index ? 'active' : ''}}"
+						 bind:tap="mySelect"
+						 data-idx="{{index}}"
+						 data-name="{{item}}"
+						>
+							{{item}}
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="input-item">
+				<text class="tit">密码</text>
+				<input
+				 type="password"
+				 placeholder="长度为6-10的字母数字_@, 至少有一个字母和数字"
+				 placeholder-class="pwd_placeholder"
+				 data-type="pwd"
+				 bind:input="getForm"
+				 value="{{pwd}}"
+				/>
+			</view>
+			<view class="input-item" wx:if="{{isRegister}}">
+				<text class="tit">确认密码</text>
+				<input
+				 type="password"
+				 placeholder="请确认密码"
+				 data-type="cfmPwd"
+				 bind:input="getForm"
+				 value="{{cfmPwd}}"
+				/>
+			</view>
+		</view>
+		<button class="confirm-btn" bind:tap="handleForm" wx:if="{{isRegister}}">注册</button>
+		<button class="confirm-btn" bind:tap="handleForm" wx:else>登录</button>
+		<view class="forget-section" wx:if="{{!isRegister}}">忘记密码?</view>
+	</view>
+	<view class="register-section">
+		{{isRegister ? "": "还没有账号?"}}
+		<text bind:tap="login" wx:if="{{isRegister}}">返回登录</text>
+		<text bind:tap="register" wx:else>马上注册</text>
+	</view>
+</view>
+

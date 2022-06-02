@@ -1,0 +1,113 @@
+<view class="grow">
+	<block wx:if="{{isLogin}}">
+		<block wx:if="{{role === 2 || role === 3}}">
+			<view class="notice">您是管理员</view>
+		</block>
+		<block wx:elif="{{role === 0}}">
+			<block wx:if="{{hasChild}}">
+				<view class="integral">
+					出勤奖励；当前拥有
+					<text>xxx</text>
+					积分
+				</view>
+				<view class="tip">
+					<GrowPlan title="我的护理小tips" datas="{{nurse}}" role="{{0}}" />
+				</view>
+				<view class="plan">
+					<GrowPlan title="康复训练计划跟踪" datas="{{plans}}" role="{{0}}" />
+				</view>
+				<view class="activity">
+					<GrowPlan title="参与的公共活动" datas="{{active}}" role="{{0}}" />
+				</view>
+				<view class="recommend">
+					<view class="tit">今日推荐</view>
+					<MorePlan title="推荐护理知识" datas="{{moreNurse}}" />
+					<MorePlan title="推荐康复计划" datas="{{morePlan}}" />
+					<MorePlan title="推荐公共活动" datas="{{moreActive}}" />
+				</view>
+			</block>
+			<block wx:else>
+				<view class="notice">您还未添加您孩子的信息</view>
+			</block>
+		</block>
+		<block wx:if="{{role === 1}}">
+			<view class="tip">
+				<GrowPlan title="我制定的护理计划" datas="{{tea_nurse}}" />
+			</view>
+			<view class="plan">
+				<GrowPlan title="我制定的康复计划" datas="{{tea_plan}}" />
+			</view>
+			<view class="activity">
+				<GrowPlan title="我制定的公共活动" datas="{{tea_active}}" />
+			</view>
+			<view
+			 class="drawer_screen"
+			 bindtap="submit"
+			 data-statu="close"
+			 wx:if="{{showModalStatus}}"
+			 data-type="other"
+			/>
+			<view
+			 bind:tap="submit"
+			 class="set_plan"
+			 data-statu="open"
+			 data-type="other"
+			>制定新的成长计划
+			</view>
+			<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+				<view class="drawer_content">
+					<view>
+						<label>对应病症：</label>
+						<input value="{{inputDisease}}" bindinput="getVal" data-type="inputDisease" />
+					</view>
+					<view>
+						<label>课程摘要：</label>
+						<input value="{{inputSumm}}" bindinput="getVal" data-type="inputSumm" />
+					</view>
+					<view>
+						<label>课程描述：</label>
+						<input value="{{inputDes}}" bindinput="getVal" data-type="inputDes" />
+					</view>
+					<view class="course_type">
+						<view>课程类型：</view>
+						<radio-group bindchange="radioChange">
+							<radio value="nursing">
+								<label for="nursing">护理知识</label>
+							</radio>
+							<radio value="plan">
+								<label for="plan">康复计划</label>
+							</radio>
+							<radio value="active">
+								<label for="active">公共活动</label>
+							</radio>
+						</radio-group>
+					</view>
+					<view>
+						<label>课程价格：</label>
+						<input
+						 value="{{inputFee}}"
+						 bindinput="getVal"
+						 data-type="inputFee"
+						 bindblur="price"
+						/>
+					</view>
+					<view>
+						<label>封面地址：</label>
+						<input value="{{inputUrl}}" bindinput="getVal" data-type="inputUrl" />
+					</view>
+				</view>
+				<view
+				 class="btn_ok"
+				 bindtap="submit"
+				 data-statu="close"
+				 data-type="submit"
+				>确定
+				</view>
+			</view>
+		</block>
+	</block>
+	<block wx:else>
+		<view class="notice">请先登录</view>
+	</block>
+</view>
+

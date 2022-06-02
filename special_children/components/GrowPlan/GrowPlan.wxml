@@ -1,0 +1,26 @@
+<view class="tit">{{title}}</view>
+<view>
+  <block wx:if="{{datas.length}}">
+    <scroll-view scroll-x enable-flex scroll-y="false">
+      <view class="view_item" wx:for="{{datas}}" wx:key="id">
+        <image src="{{item.coverUrl}}" mode="aspectFill" binderror="imgError" data-id="{{item.id}}"  data-type="{{item.type}}"/>
+        <view class="des">
+          <text class="summary">{{item.summary}}:</text>
+          {{item.des}}
+        </view>
+        <block wx:if="{{role === 0}}">
+          <view class="speed_wrap">
+            <view class="speed">
+              <view class="speed_inner" style="width: {{145 * item.cpt_ratio}}rpx; background-color: {{item.cpt_ratio < 0.5 ? '#E93D3D' : (item.cpt_ratio < 0.8 ? '#D6A447' : '#3BD83B')}};" />
+            </view>
+            <text class="ratio">{{item.cpt_ratio * 100 + "%"}}</text>
+          </view>
+        </block>
+        <block wx:else></block>
+      </view>
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <view class="notice">暂无数据</view>
+  </block>
+</view>

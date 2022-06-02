@@ -1,0 +1,47 @@
+.tit {
+  font-weight: normal;
+  line-height: 50rpx;
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin: 25rpx 0;
+}
+.item image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 20rpx;
+}
+.item view {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.item text {
+  font-weight: bold;
+}
+.item button {
+  color: #ff754b;
+  width: 210rpx;
+  padding: 8rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #ff754b;
+  border-radius: 40rpx;
+  margin: 0;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.notice {
+  text-align: center;
+  margin: 25rpx 0;
+}
+.item .isClick {
+  border: none;
+  color: rgba(0, 0, 0, 0.3);
+  background-color: #bec8c8;
+}

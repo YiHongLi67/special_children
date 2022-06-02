@@ -1,0 +1,42 @@
+<view class="child">
+  <block wx:if="{{hasChild}}">
+    <view class="msg">
+      <view>
+        <text>姓名：</text>
+        <text>{{name}}</text>
+      </view>
+      <view>
+        <text>年龄：</text>
+        <text>{{age}}</text>
+      </view>
+      <view>
+        <text>病症：</text>
+        <text>{{disease}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="btn">
+      <view bindtap="submit" data-statu="open" data-type="other">添加孩子信息</view>
+    </view>
+    <view class="drawer_screen" bindtap="submit" data-statu="close" wx:if="{{showModalStatus}}" data-type="other" />
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+      <view class="drawer_title">输入孩子信息</view>
+      <view class="drawer_content">
+        <view>
+          <label>姓名：</label>
+          <input value="{{inputName}}" bindinput="getVal" data-type="inputName" />
+        </view>
+        <view>
+          <label>年龄：</label>
+          <input value="{{inputAge}}" bindinput="getVal" data-type="inputAge" />
+        </view>
+        <view>
+          <label>病症：</label>
+          <input value="{{inputDisease}}" bindinput="getVal" data-type="inputDisease" />
+        </view>
+      </view>
+      <view class="btn_ok" bindtap="submit" data-statu="close" data-type="submit">确定</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,33 @@
+<view class="manage">
+	<view class="item">
+		<text>手机号</text>
+		<input
+		 type="text"
+		 value="{{phone}}"
+		 bind:input="getForm"
+		 data-type="phone"
+		/>
+	</view>
+	<view class="item">
+		<text>密码</text>
+		<block wx:if="{{isInput}}">
+			<input
+			 type="password"
+			 placeholder="由字母数字_@组成,长度6-10,必须包含字母和数字"
+			 placeholder-class="pwd_placeholder"
+			 bind:input="getForm"
+			 data-type="pwd"
+			/>
+		</block>
+		<block wx:else>
+			<view bind:tap="changePwd" class="pwd">修改密码</view>
+		</block>
+	</view>
+	<view class="item">
+		<text>角色</text>
+		<text>{{roles[role]}}</text>
+	</view>
+	<view class="logout" bind:tap="logout">退出登录</view>
+	<view class="save" bind:tap="save">保存</view>
+</view>
+
