@@ -11,14 +11,14 @@ Page({
     cfmPwd: "",
     select: false,
     curIdx: -1,
-    roles: ["家长", "老师", "人事管理", "财务管理"],
+    roles: ["家长", "老师", "人事管理", "财务管理"]
   },
   hideSelect() {
     this.setData({ select: false });
   },
   bindShowMsg() {
     this.setData({
-      select: !this.data.select,
+      select: !this.data.select
     });
   },
   mySelect(e) {
@@ -26,13 +26,13 @@ Page({
     this.setData({
       role: name,
       select: false,
-      curIdx: idx,
+      curIdx: idx
     });
   },
   getForm(e) {
     const { type } = e.currentTarget.dataset;
     this.setData({
-      [type]: e.detail.value,
+      [type]: e.detail.value
     });
   },
   judgePhone(phone) {
@@ -41,7 +41,7 @@ Page({
       wx.showToast({
         title: "手机号不能为空",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -49,7 +49,7 @@ Page({
       wx.showToast({
         title: "手机号不合法",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -60,7 +60,7 @@ Page({
       wx.showToast({
         title: "请选择角色",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -72,7 +72,7 @@ Page({
       wx.showToast({
         title: "密码不能为空",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -81,7 +81,7 @@ Page({
       wx.showToast({
         title: "密码是长度为6-10的字母数字_@，至少有一个字母和数字",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -92,7 +92,7 @@ Page({
       wx.showToast({
         title: "确认密码不能为空",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -103,7 +103,7 @@ Page({
       wx.showToast({
         title: "密码与确认密码不一致",
         icon: "none",
-        duration: 1500,
+        duration: 1500
       });
       return false;
     }
@@ -138,7 +138,7 @@ Page({
         wx.showToast({
           title: res.message,
           icon: "none",
-          duration: 1500,
+          duration: 1500
         });
       } else {
         wx.showToast({
@@ -150,9 +150,9 @@ Page({
             this.setData({
               isRegister: false,
               pwd: "",
-              cfmPwd: "",
+              cfmPwd: ""
             });
-          },
+          }
         });
       }
     } else {
@@ -162,7 +162,7 @@ Page({
         wx.showToast({
           title: res.message,
           icon: "none",
-          duration: 1500,
+          duration: 1500
         });
         return;
       }
@@ -185,7 +185,7 @@ Page({
         console.log(userInfo);
         wx.setStorageSync("userInfo", JSON.stringify(userInfo));
         wx.switchTab({
-          url: "/pages/personal/personal",
+          url: "/pages/personal/personal"
         });
       }
     }
@@ -199,40 +199,40 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) { },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () { },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () { },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () { },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () { },
+  onUnload: function () {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () { },
+  onPullDownRefresh: function () {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () { },
+  onReachBottom: function () {},
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () { },
+  onShareAppMessage: function () {}
 });
